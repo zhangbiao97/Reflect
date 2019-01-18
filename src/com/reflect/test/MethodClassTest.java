@@ -22,7 +22,8 @@ public class MethodClassTest {
 
 
     /**
-     * 获取类中的所有方法
+     * 打印类信息，包括类中的成员函数，成员函数的返回类型，成员函数的参数列表
+     * @param obj
      */
     public static void printClassMessage(Object obj) {
         Class c1 = obj.getClass();
