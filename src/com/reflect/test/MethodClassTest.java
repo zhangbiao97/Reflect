@@ -1,5 +1,6 @@
 package com.reflect.test;
 
+import com.reflect.entity.Person;
 import org.junit.Test;
 
 import java.lang.reflect.Method;
@@ -18,6 +19,31 @@ public class MethodClassTest {
     public void test01() {
         String str = "haha";
         printClassMessage(str);
+    }
+
+    /**
+     * 通过反射来调用方法
+     *
+     * invoke：调用方法
+     */
+    @Test
+    public void test02(){
+        Person p=new Person();
+        Class c = p.getClass();
+        try {
+            //print(int,int)
+            Method printMethod = c.getMethod("print", int.class, int.class);
+            printMethod.invoke(p,10,20);
+            System.out.println("---------------------");
+            //print(String,String)
+            Method printMethod2 = c.getMethod("print", String.class, String.class);
+            printMethod2.invoke(p,"hello","WORLD");
+            System.out.println("---------------------");
+            Method printMethod3 = c.getMethod("print");
+            printMethod3.invoke(p);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
