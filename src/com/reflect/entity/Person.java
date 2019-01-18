@@ -12,6 +12,18 @@ public class Person {
     String name;
     private int age;
 
+    public void print(){
+        System.out.println("print");
+    }
+
+    public void print(int a,int b){
+        System.out.println(a+b);
+    }
+
+    public void print(String a,String b){
+        System.out.println(a.toUpperCase()+","+b.toLowerCase());
+    }
+
     public String getName() {
         return name;
     }
