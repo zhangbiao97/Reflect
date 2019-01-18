@@ -23,10 +23,19 @@ public class MethodClassTest {
 
     /**
      * 打印类信息，包括类中的成员函数，成员函数的返回类型，成员函数的参数列表
+     * <p>
+     * 成员方法也是对象，Method类，方法对象
+     * 一个成员方法就是一个Method对象
+     * java.lang.reflect.Method
+     * <p>
+     * getMethods()方法获取所有public的方法，包括父类继承过来的
+     * getDeclaredMethods()方法获取自己声明的方法（包括private）
+     *
      * @param obj
      */
     public static void printClassMessage(Object obj) {
         Class c1 = obj.getClass();
+        //打印类的名称
         System.out.println("类的名称是：" + c1.getName());
         //获取修饰符为public的方法
         Method[] methods = c1.getMethods();
